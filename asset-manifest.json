@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/filmoteka-react-firebase/static/css/main.9342c1ac.css",
+    "main.js": "/filmoteka-react-firebase/static/js/main.05d18743.js",
+    "static/js/66.9a4c919f.chunk.js": "/filmoteka-react-firebase/static/js/66.9a4c919f.chunk.js",
+    "static/js/44.0e671020.chunk.js": "/filmoteka-react-firebase/static/js/44.0e671020.chunk.js",
+    "static/js/95.95ba7551.chunk.js": "/filmoteka-react-firebase/static/js/95.95ba7551.chunk.js",
+    "static/js/414.17be4e47.chunk.js": "/filmoteka-react-firebase/static/js/414.17be4e47.chunk.js",
+    "static/js/303.83504576.chunk.js": "/filmoteka-react-firebase/static/js/303.83504576.chunk.js",
+    "static/js/368.edf41658.chunk.js": "/filmoteka-react-firebase/static/js/368.edf41658.chunk.js",
+    "static/js/569.f27dbeca.chunk.js": "/filmoteka-react-firebase/static/js/569.f27dbeca.chunk.js",
+    "static/js/365.a421803b.chunk.js": "/filmoteka-react-firebase/static/js/365.a421803b.chunk.js",
+    "static/js/361.e5a7e5e6.chunk.js": "/filmoteka-react-firebase/static/js/361.e5a7e5e6.chunk.js",
+    "static/media/noImage.png": "/filmoteka-react-firebase/static/media/noImage.1eb8f2f3700dea5bc5e9.png",
+    "static/media/sprite.svg": "/filmoteka-react-firebase/static/media/sprite.83e1e9d341ebbf0310526cb232decb2b.svg",
+    "index.html": "/filmoteka-react-firebase/index.html",
+    "main.9342c1ac.css.map": "/filmoteka-react-firebase/static/css/main.9342c1ac.css.map",
+    "main.05d18743.js.map": "/filmoteka-react-firebase/static/js/main.05d18743.js.map",
+    "66.9a4c919f.chunk.js.map": "/filmoteka-react-firebase/static/js/66.9a4c919f.chunk.js.map",
+    "44.0e671020.chunk.js.map": "/filmoteka-react-firebase/static/js/44.0e671020.chunk.js.map",
+    "95.95ba7551.chunk.js.map": "/filmoteka-react-firebase/static/js/95.95ba7551.chunk.js.map",
+    "414.17be4e47.chunk.js.map": "/filmoteka-react-firebase/static/js/414.17be4e47.chunk.js.map",
+    "303.83504576.chunk.js.map": "/filmoteka-react-firebase/static/js/303.83504576.chunk.js.map",
+    "368.edf41658.chunk.js.map": "/filmoteka-react-firebase/static/js/368.edf41658.chunk.js.map",
+    "569.f27dbeca.chunk.js.map": "/filmoteka-react-firebase/static/js/569.f27dbeca.chunk.js.map",
+    "365.a421803b.chunk.js.map": "/filmoteka-react-firebase/static/js/365.a421803b.chunk.js.map",
+    "361.e5a7e5e6.chunk.js.map": "/filmoteka-react-firebase/static/js/361.e5a7e5e6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9342c1ac.css",
+    "static/js/main.05d18743.js"
+  ]
+}
