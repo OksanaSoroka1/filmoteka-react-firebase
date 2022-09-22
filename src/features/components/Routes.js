@@ -14,10 +14,11 @@ const LoginPage = lazy(() => import('../pages/Login'));
 const SignUpPage = lazy(() => import('../pages/SignUp'));
 const FilmInfo = lazy(() => import('../sections/FilmInfo'))
 
+
 export const SiteRoutes = () => { 
   const location = useLocation();
   const background = location.state && location.state.background;
- 
+  
   useEffect(() => {
     console.log('new location',location)
    },[location])
@@ -25,7 +26,7 @@ export const SiteRoutes = () => {
     /* <PageLoader></PageLoader> */
          <Suspense fallback={<PageLoader></PageLoader>}>
         <Routes location={background || location}>
-          <Route path='/' element={ <SitePage></SitePage>}>          
+        <Route path='/' element={ <SitePage></SitePage>}>          
               <Route  path='trending' element={<HomePage title='Trending movies' />}  ></Route>
               <Route path='top-rated' element={<HomePage title='Top-rated movies'/>} ></Route>
               <Route path='upcoming' element={<HomePage title='Upcoming movies' />} ></Route>  

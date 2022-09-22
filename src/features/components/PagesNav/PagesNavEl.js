@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setFetchPage } from '../../../store/fetchPage/reducers';
 import { useFetchPage } from '../../../hooks/useFetchPage';
+
 const StyledEl = styled.button`
 background-color: transparent;
 color: ${props=> props.content?.toString() === props.fetchPage? styleVars.fontColors.accentFirst : 'inherit'} ; 
@@ -20,7 +21,10 @@ border: none;
 export const PagesNavEl = ({ content, value }) => {
   const dispatch = useDispatch();
   const { fetchPage } = useFetchPage();
-   const setPage = (page) => {
+  const location = useLocation();
+
+  const setPage = (page) => {
+    location.state = null;
         dispatch(setFetchPage(page))
      }
 

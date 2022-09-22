@@ -7,9 +7,9 @@ import { useAuth } from '../../../hooks/useAuth';
 import { useUserFilms } from '../../../hooks/useUserFilms';
 import { useLoadingStatus } from '../../../hooks/useLoadingstatus';
 import { useFetchPage } from '../../../hooks/useFetchPage';
-const userFilmsPathArr = [{ path: '/favorites', title: 'Favorites movies' },
-  { path: '/watched', title: 'Watched movies' },
-    { path: '/wishlist', title: 'Wishlist' }]
+const userFilmsPathArr = [{ path:`/favorites` , title: 'Favorites movies' },
+  { path: `/watched`, title: 'Watched movies' },
+    { path: `/wishlist`, title: 'Wishlist' }]
 
 const UserFilmsPage = ({ title }) => { 
     const [filmsList, setFilmsList] = useState([])
@@ -26,14 +26,14 @@ const UserFilmsPage = ({ title }) => {
     }
     useEffect(() => {
         switch (location.pathname) {
-            case '/favorites':
+            case `/favorites`:
                 loadFilmsList(favorites)
                 break
-            case '/watched':
+            case `/watched`:
                  loadFilmsList(watched)
                 break
                
-            case '/wishlist':
+            case `/wishlist`:
                  loadFilmsList(wishlist)
                 break
         

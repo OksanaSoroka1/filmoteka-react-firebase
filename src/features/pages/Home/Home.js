@@ -4,9 +4,9 @@ import { getTrendMovieList, getTopRatedMovies, getUpcomingMovies } from '../../.
 import { FilmsListSection } from '../../sections/FilmsListSection';
 import { useFilmsList } from '../../../hooks/useFilmsList';
 import { useFetchPage } from '../../../hooks/useFetchPage';
-const homePathArr = [{ path: '/trending', title: 'Trending movies' },
-  { path: '/top-rated', title: 'Top-rated movies' },
-    { path: '/upcoming', title: 'Upcoming movies' }]
+const homePathArr = [{ path: `/trending`, title: 'Trending movies' },
+  { path: `/top-rated`, title: 'Top-rated movies' },
+    { path: `/upcoming`, title: 'Upcoming movies' }]
   
 const HomePage = ({ title }) => { 
     const {filmsList, totalPages, loadingStatus, setList }=useFilmsList()
@@ -24,18 +24,21 @@ const HomePage = ({ title }) => {
         }
         onNewLocation()
        
-    },[location])
+    }, [location])
+    useEffect(() => {
+        console.log(location.state)
+     },[location.state])
     useEffect(() => {
        /*  console.log(`fetch page became ${fetchPage} in home`) */
         switch (location.pathname) {
             
-            case '/trending':
+            case `/trending`:
                 setList(getTrendMovieList, fetchPage)
                 break;
-             case '/top-rated':
+             case `/top-rated`:
                 setList(getTopRatedMovies, fetchPage)
                 break;
-             case '/upcoming':
+             case `/upcoming`:
                 setList(getUpcomingMovies, fetchPage)
                 break;
         

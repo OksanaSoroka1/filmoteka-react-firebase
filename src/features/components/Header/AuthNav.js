@@ -28,7 +28,7 @@ export const AuthNav = () => {
     const dispatch = useDispatch();
     let location = useLocation();
     useEffect(() => { 
-        ( location.pathname==='/login' ||  location.pathname==='/signup') && setBtnVisibility(true)
+        ( location.pathname===`/login` ||  location.pathname===`/signup`) && setBtnVisibility(true)
     },[location])
     const showIcon = () => {    
         setTimeout(()=> setBtnVisibility(true), 20000)
@@ -40,7 +40,7 @@ export const AuthNav = () => {
             </StyledIconButton>) : 
             (<StyledNavList onMouseOut={()=>showIcon()}>
                 <StyledAuthListEl><StyledNavLink to={`/login`} onClick={() => dispatch(setModalVisibility(true))} state={{background: location}}>LogIn</StyledNavLink></StyledAuthListEl>
-        <StyledAuthListEl><StyledNavLink to='/signup' onClick={()=>dispatch(setModalVisibility(true))} state={{background: location}} >SignUp</StyledNavLink></StyledAuthListEl>
+        <StyledAuthListEl><StyledNavLink to={`/signup`} onClick={()=>dispatch(setModalVisibility(true))} state={{background: location}} >SignUp</StyledNavLink></StyledAuthListEl>
         
         </StyledNavList>
         ) }
