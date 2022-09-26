@@ -43,14 +43,20 @@ const Modal = ({ children }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const location = useLocation();
-    useEffect(() => { 
-        const onEscPress = (e) => { 
-            if (e.code !== 'Escape') { return}
+    useEffect(() => {
+        const onEscPress = (e) => {
+            if (e.code !== 'Escape') { return }
             closeModal()
         }
         window.addEventListener('keydown', onEscPress)
-        return ()=> window.removeEventListener('keydown', onEscPress)
-    },[])
+        return () => window.removeEventListener('keydown', onEscPress)
+    }, []);
+
+    useEffect(() => {
+        document.body.style.overflow = 'hidden'
+        return ()=> document.body.style.overflow = 'unset'
+    }, []);
+    
     function closeModal() {
         dispatch(setModalVisibility(false));
         console.log('navigate', navigate)

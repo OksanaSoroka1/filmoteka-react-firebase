@@ -12,7 +12,7 @@ grid-template-rows: minmax(100px, auto)  auto minmax(75px, auto);
 export const StyledContainer = styled.div`
 margin-left: auto;
 margin-right: auto;
-/* padding: 0 20px; */
+padding: 0 30px;
 max-width: 1600px;
 height: 100%;
 

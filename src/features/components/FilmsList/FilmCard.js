@@ -3,7 +3,7 @@ import { styleVars } from '../../../styles/vars';
 import { useState } from 'react';
 import { Link, useLocation  } from 'react-router-dom';
 import noImage from '../../../images/noImage.png';
-
+import { FilmImg } from '../FilmImg';
 
 const StyledFilmCard = styled.li`
 position: ${(props) => props.liststyle === 'grid' && 'relative' };
@@ -88,7 +88,7 @@ export const FilmCard = ({  id, name, poster,overview, liststyle}) => {
     return (<StyledFilmCard liststyle={ liststyle} onMouseOver={() => setDescriptionVisibility(true)} onMouseOut={() => setDescriptionVisibility(false)} >
         <StyledFilmLink liststyle={ liststyle} id={id} to={`${location.pathname}/${id }`} state={{background: location }}>
             <StyledCardImgWrap liststyle={ liststyle}>
-                <img  src={poster? `https://image.tmdb.org/t/p/original${poster}` : noImage} alt={name }></img>
+                <FilmImg poster={poster} name={ name}></FilmImg>
             </StyledCardImgWrap>
             {liststyle === 'list' && (
                 <StyledContent liststyle={ liststyle}>
