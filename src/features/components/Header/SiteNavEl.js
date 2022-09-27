@@ -5,7 +5,9 @@ import { StyledNavLink , StyledNavListEl, StyledSvg, StyledIconButton} from "../
 import { DropdownMenu } from "../DropdownMenu";
 import  sprite from '../../../images/sprite.svg'
 import { useDropdownVisibility } from "../../../hooks/useDropdownVisibility";
-
+import { CSSTransition } from 'react-transition-group';
+import { useRef } from 'react';
+import { duration, defaultStyle, transitionStyles } from "../../../styles/transitions";
 
 const StyledSiteNavEl = styled(StyledNavListEl)`
 position: relative;
@@ -18,7 +20,7 @@ padding: 0 4%;
 
 export const SiteNavEl = ({linkName , path, menuList, children}) => {
     const {visibility, setVisibility, closeMenu }=useDropdownVisibility()
-   
+    const nodeRef = useRef(null);
     function onNavLinkClick(e) { 
         if (linkName === 'Home') {
             e.preventDefault();
@@ -30,10 +32,16 @@ export const SiteNavEl = ({linkName , path, menuList, children}) => {
             <StyledNavLink  onClick={onNavLinkClick}
                 to={path}
                 onMouseOut={closeMenu}>{linkName} {children} </StyledNavLink>
-                    {menuList?.length>0 && visibility && (
-                <DropdownMenu id='home-nav'
-                    menuList={menuList}>       
-                </DropdownMenu>
+            {menuList?.length > 0 /* && visibility */ && (
+                <CSSTransition in={visibility} timeout={300}  classNames="fade" unmountOnExit={ true}>
+                    {() => (
+                        <DropdownMenu id='home-nav'
+                            menuList={menuList}
+                            >       
+                        </DropdownMenu>
+                    )}
+                </CSSTransition>
+                
                     ) }
         </StyledSiteNavEl>
     )

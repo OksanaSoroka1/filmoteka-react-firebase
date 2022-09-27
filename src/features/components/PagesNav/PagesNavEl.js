@@ -12,7 +12,7 @@ color: ${props=> props.content?.toString() === props.fetchPage? styleVars.fontCo
 font-size: 25px;
 cursor: pointer;
 border: none;
-
+transition: color 300ms ${styleVars.animation.ease};
 &:hover, &:focus{
   color: ${styleVars.fontColors.accentFirst};
 }

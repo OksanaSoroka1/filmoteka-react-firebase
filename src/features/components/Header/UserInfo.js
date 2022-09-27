@@ -11,6 +11,7 @@ import { removeUserLists } from '../../../store/userFilms/reducers';
 import { Logout } from './Logout';
 import { removeUser } from '../../../store/auth/redusers';
 import { useDropdownVisibility } from '../../../hooks/useDropdownVisibility';
+import { CSSTransition } from 'react-transition-group';
 const StyledWrapper = styled.div`
 position: relative;
 display: flex;
@@ -61,8 +62,10 @@ export const UserInfo = () => {
             
         </StyledAvatar>
         <StyledEmailText>{email} </StyledEmailText>
-        {visibility && <DropdownMenu menuList={userInfoList} id='user-info'onMenuItemClick={() => setVisibility()}>
+        {/* visibility && */ <CSSTransition in={visibility} timeout={300}  classNames="fade" unmountOnExit={ true}>
+            <DropdownMenu menuList={userInfoList} id='user-info'onMenuItemClick={() => setVisibility()}>
             <Logout onLogOut={onLogOut}></Logout>
-                    </DropdownMenu> }
+                    </DropdownMenu>
+        </CSSTransition>  }
     </StyledWrapper>)
 }

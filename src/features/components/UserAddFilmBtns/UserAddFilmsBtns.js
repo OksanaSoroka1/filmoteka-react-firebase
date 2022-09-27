@@ -9,8 +9,8 @@ import sprite from '../../../images/sprite.svg';
 import { setFilmInfo, deleteFilmInfo } from '../../../firebase/realTimeDB'; 
 import { useUserFilms } from '../../../hooks/useUserFilms';
 import { setFavorite, setWatched, setWishlist, removeFromFavorite, removeFromWatched, removeFromWishlist } from '../../../store/userFilms/reducers';
-const StyledBtnWrap = styled.ul`
 
+const StyledBtnWrap = styled.ul`
 position: absolute;
 right: 0;
 top: 30%;

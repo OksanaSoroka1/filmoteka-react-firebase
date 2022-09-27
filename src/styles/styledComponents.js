@@ -51,13 +51,12 @@ width: 100%;
 display: flex;
 align-items: center;
 cursor: pointer;
-/* transition: ; */
+transition: color 300ms ${styleVars.animation.ease} ;
 &:hover, &:focus{
   color: ${styleVars.fontColors.accentFirst}; 
 }
 &.active{
 color: ${styleVars.fontColors.accentFirst};
-font-size: 35px;
 }
 `
 //button
@@ -81,6 +80,7 @@ align-items: center;
 fill: ${styleVars.fontColors.secondary};
 padding: 0;
 cursor: pointer;
+transition: fill 300ms ${styleVars.animation.ease} ;
 &:hover, &:focus{
     fill: ${styleVars.fontColors.accentFirst};
 }

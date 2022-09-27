@@ -36,6 +36,9 @@ export const styleVars = {
         menuActive: '0px 1px 7px #EDCCBA',
         searchActive: '0px 2px 10px #B67DD0',
         buttonHover: '0px 4px 15px #FFD0B6',
+    },
+    animation: {
+        ease: 'cubic-bezier(0.45,0.05,0.55,0.95)'
     }
 
 }

@@ -4,7 +4,7 @@ import {  StyledIconButton, StyledSvg } from '../../../styles/styledComponents';
 import sprite from '../../../images/sprite.svg';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useState } from 'react';
-
+import { CSSTransition } from 'react-transition-group';
 const StyledNextBtn = styled(StyledIconButton)`
 width: 45px;
 height: 45px;
@@ -25,6 +25,28 @@ color:  ${props => props.colorTheme === 'light' ? styleVars.fontColors.primary :
 text-align: start;
 border-radius: ${styleVars.borders.radius};
 
+// enter from
+  &.fade-enter {
+    opacity: 0;
+   
+  }
+
+  // enter to
+  &.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ${styleVars.animation.ease};
+  }
+
+  // exit from
+  &.fade-exit {
+    opacity: 1;
+  }
+
+  // exit to 
+  &.fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms ${styleVars.animation.ease};
+  }
 `
 
 
@@ -56,7 +78,10 @@ export const NextTitleBtn = ({ colorTheme, title, pathArr}) => {
          
         <StyledNextBtn colorTheme={colorTheme} type='button' onMouseOut={()=>setNextTitleVisibility(false)} onMouseOver={()=> showNextTitle(pathArr)} onClick={() => openNextPage(pathArr)}>
           <StyledSvg><use href={`${sprite}#icon-right-arrow`}></use></StyledSvg>
-          {nextTitleVisibility && <StyledNextTitle colorTheme={colorTheme}>{nextTitle}</StyledNextTitle> }
+        {<CSSTransition in={nextTitleVisibility} timeout={300}  classNames="fade" unmountOnExit={ true}>
+            <StyledNextTitle colorTheme={colorTheme}>{nextTitle}</StyledNextTitle>
+        </CSSTransition>
+          }
         </StyledNextBtn>
         
     )

@@ -3,6 +3,7 @@ import { FilmCard } from './FilmCard';
 import { usePageSettings } from '../../../hooks/usePageSettings';
 import { useEffect } from 'react';
 import { ListViewFilters } from '../Home/ListFilters';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 const StyledListBlock = styled.div`
 
 `
@@ -20,8 +21,10 @@ export const FilmList = ({ filmsArr, colorTheme, listView }) => {
     return (
         <StyledListBlock>
             <ListViewFilters colorTheme={colorTheme} listView={ listView}></ListViewFilters>
-            <StyledList listStyle={listStyle}>
-        {filmsArr?.map((item) => <FilmCard key={item.id} id={item.id} name={item.title} overview={item.overview } liststyle={listStyle} date={item.release_date}  poster={ item.poster_path}></FilmCard>)}
+            <StyledList   /* component='ul' */ listStyle={listStyle}>
+                {filmsArr?.map((item) =>
+                    <FilmCard key={item.id} id={item.id} name={item.title} overview={item.overview} liststyle={listStyle} date={item.release_date} poster={item.poster_path}></FilmCard>  
+                )}
     </StyledList>
         </StyledListBlock>
         )
